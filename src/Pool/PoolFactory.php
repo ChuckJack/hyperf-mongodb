@@ -25,7 +25,7 @@ class PoolFactory
         }
 
         if ($this->container instanceof Container) {
-            $mongodbPool = $this->container->make(MongodbPool::class, ['name' => $pool]);
+            $mongodbPool = $this->container->make(MongodbPool::class, ['pool' => $pool]);
         } else {
             $mongodbPool = new MongodbPool($this->container, $pool);
         }
